@@ -11,9 +11,9 @@ public class main {
 	
 	public static void main(String[] args) {
 	
-	//GestioneClienti gestoreclienti = new GestioneClienti();
+	
 	GestioneProdotti gestoreprodotti = new GestioneProdotti();
-	//GestioneSpesa gestorespesa = new GestioneSpesa();
+	
 	
 	Carrello car1 = new Carrello();
 	Carrello car2 = new Carrello();	
@@ -96,16 +96,15 @@ public class main {
 
 	 
 	System.out.println("Lista clienti:\n"+gestoreprodotti.getListaClienti()); 
-	 /*gestoreprodotti.aggiungiClienteAbituale(antonio);
-	 gestoreprodotti.aggiungiClienteAbituale(nunzia);*/
 	
 	 gestoreprodotti.aggiungiSconto(sconto1);
 	 gestoreprodotti.aggiungiSconto(sconto2);
 
       spesa_antonio3.setCosto_totale((gestoreprodotti.applicaSconto(sconto1, spesa_antonio3, antonio)));
       spesa_nunzia2.setCosto_totale(gestoreprodotti.applicaSconto(sconto2, spesa_nunzia2, nunzia));
+      
     System.out.println(gestoreprodotti.generaReport(2));
-	 System.out.println(gestoreprodotti.getListaClientiAbituali());
+	
     
    
 	}
