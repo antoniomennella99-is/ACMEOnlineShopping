@@ -1,11 +1,11 @@
 package is.entity.ACMEOnlineShopping;
 
 public class Cliente {
-	private String nomeCli;
-	private String passwordC;
-	private String numTel;
-	private String CartaCredito;
-	private Carrello carrello;
+	protected String nomeCli;
+	protected String passwordC;
+	protected String numTel;
+	protected String CartaCredito;
+	protected Carrello carrello;
 	
 	public Cliente(Carrello car,String nome, String password, String numero, String carta) {
 		this.setNomeCli(nome);

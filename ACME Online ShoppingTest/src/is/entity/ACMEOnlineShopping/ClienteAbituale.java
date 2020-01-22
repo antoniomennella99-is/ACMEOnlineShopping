@@ -1,7 +1,7 @@
 package is.entity.ACMEOnlineShopping;
 
 public class ClienteAbituale extends Cliente{
-	protected int numSpes;
+	private int numSpes;
 
 	
 	public ClienteAbituale(Carrello car, String nome, String password, String numero, String carta, int num) {

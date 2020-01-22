@@ -9,7 +9,7 @@ public class GestioneProdotti {
 		public ArrayList<Prodotto> listaprodotti;
 		public ArrayList<Cliente> listaclientipagato; //Lista clienti che hanno almeno fatto una spesa
 		public ArrayList<Carrello> listacarrelli;	//lista carrelli usati
-		public ArrayList<Carrello> listacarrellitutti;
+		public ArrayList<Carrello> listacarrellitutti;	//lista completa di tutti i carrelli
 		public ArrayList<Sconto> listasconti;
 		public ArrayList<Sconto> listascontiusati;
 		public ArrayList<Cliente> listaclienti;
@@ -85,7 +85,7 @@ public class GestioneProdotti {
 		
 		
 		
-		public void rimuoviProdotto(Prodotto P , int quantita) {
+		public void rimuoviProdotto(Prodotto P , int quantita) {	//rimuove una certa quantità di prodotto dal catalogo
 			if(P.getQ_disponibileProd() >= quantita) {
 				System.out.println("\nImpossibile rimuovere" + P.toString() +" terminato.");
 			} else {
@@ -137,7 +137,7 @@ public class GestioneProdotti {
 			}
 	}
 	
-	public void mostraCarrello(Cliente C , Carrello car) {
+	public void mostraCarrello(Cliente C , Carrello car) { //mostra tutti u prodotti presenti in un carrello 
 		ArrayList<Prodotto> listacarrello = new ArrayList<Prodotto>();
 		if(getListaClienti().contains(C)) {
 			for (Prodotto prodotto : car.getListaprodotti()) {
@@ -281,11 +281,11 @@ public class GestioneProdotti {
 	
 	public String generaReport(int k) {
 		String s = new String("");
-			
+																	//LinkedHashSet per una versione oridinata
 		ArrayList<Cliente> listaclienti2 = new ArrayList<Cliente>(new HashSet<Cliente>(listaclientipagato));
 		for (Cliente cliente :listaclienti2 ) {
 			if(conteggioSpese(cliente) >= k) {
-				 s += "\n" + "Cliente: " + cliente.getNomeCli() + " Spese: "+ conteggioSpese(cliente) + " Denaro: " + conteggioDenaro(cliente);
+				 s += "\n" + "Cliente: " + cliente.getNomeCli() + " Spese: "+ conteggioSpese(cliente) + " Denaro: " + conteggioDenaro(cliente)+ "€";
 
 			} else {
 				s+= "\n "+ cliente.toString() +" non ha fatto almeno "+ k +" spese.";
