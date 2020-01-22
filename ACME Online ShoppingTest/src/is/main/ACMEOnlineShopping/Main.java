@@ -4,9 +4,9 @@ import is.entity.ACMEOnlineShopping.*;
 
 import java.time.LocalDate;
 import java.time.Month;
-//import java.util.*;
 
-public class main {
+
+public class Main {
 	
 	
 	public static void main(String[] args) {
@@ -28,35 +28,35 @@ public class main {
 	LocalDate data_Sconto1 = LocalDate.of(2019, Month.FEBRUARY, 24);
 	LocalDate data_Sconto2 = LocalDate.of(2019, Month.JANUARY, 22);
 	LocalDate data4 = LocalDate.of(2019, Month.FEBRUARY, 7);
-	LocalDate data_nunzia = LocalDate.of(2019, Month.JANUARY, 20);
-	LocalDate data_nunzia2 = LocalDate.of(2019, Month.JANUARY, 23);
+	LocalDate data5 = LocalDate.of(2019, Month.JANUARY, 20);
+	LocalDate data6 = LocalDate.of(2019, Month.JANUARY, 23);
 	
-	Cliente antonio = new Cliente (car1, "Antonio", "Maria", "1234466", "2414 5664 5433");
-	Cliente nunzia = new Cliente (car2, "Nunzia", "alsldl", "45674322", "152255 5494 48");
+	Cliente antonio = new Cliente (car1, "Antonio", "Mennella", "1234466", "2414 5664 5433");
+	Cliente giovanni = new Cliente (car2, "Giovanni", "Battista", "45674322", "152255 5494 48");
 	
-	car1.setCliente(antonio);
+	/*car1.setCliente(antonio);
 	car2.setCliente(nunzia);
 	car3.setCliente(antonio);
 	car5.setCliente(antonio);
 	car4.setCliente(nunzia);
-	car6.setCliente(nunzia);
+	car6.setCliente(nunzia);*/
 	
-	Prodotto farina = new Prodotto(123,"Farina", "Tipo 00", 1);
-	Prodotto latte = new Prodotto(321, "Latte", "Parmalat", 2);
+	Prodotto crema = new Prodotto(123,"Crema Viso", "Idratante", 3);
+	Prodotto aspirabriciole = new Prodotto(321, "Aspirabriciole", "Elettrico", 30);
 	Prodotto detersivo = new Prodotto(456, "Detersivo", "Smacchiante", 5);
-	Prodotto uova = new Prodotto(777, "Uova", "Coccodrillo", 3);
+	Prodotto smalto = new Prodotto(777, "Smalto", "colore viola", 3);
 	
 	Spesa spesa_antonio;
-	Spesa spesa_nunzia;
+	Spesa spesa_giovanni;
 	Spesa spesa_antonio2;
 	Spesa spesa_antonio3;
-	Spesa spesa_nunzia2;
-	Spesa spesa_nunzia3;
+	Spesa spesa_giovanni2;
+	Spesa spesa_giovanni3;
 
-	gestoreprodotti.aggiungiProdotto(farina, 4);
-	gestoreprodotti.aggiungiProdotto(latte, 5);
+	gestoreprodotti.aggiungiProdotto(crema, 10);
+	gestoreprodotti.aggiungiProdotto(aspirabriciole, 30);
 	gestoreprodotti.aggiungiProdotto(detersivo, 15);
-	gestoreprodotti.aggiungiProdotto(uova, 12);
+	gestoreprodotti.aggiungiProdotto(smalto, 12);
 	gestoreprodotti.aggiungiCarrello(car1);
 	gestoreprodotti.aggiungiCarrello(car2);
 	gestoreprodotti.aggiungiCarrello(car3);
@@ -66,33 +66,33 @@ public class main {
 	 
 	
 	gestoreprodotti.aggiungiCliente(antonio);
-	gestoreprodotti.aggiungiCliente(nunzia);
+	gestoreprodotti.aggiungiCliente(giovanni);
 	
-	 gestoreprodotti.aggiungiAlCarrello(car1,antonio, latte, 3);
-	 gestoreprodotti.aggiungiAlCarrello(car1, antonio, farina, 1);
-	 gestoreprodotti.aggiungiAlCarrello(car2,nunzia, latte, 2);
-	 gestoreprodotti.aggiungiAlCarrello(car2, nunzia, farina, 2);
+	 gestoreprodotti.aggiungiAlCarrello(car1,antonio, aspirabriciole, 3);
+	 gestoreprodotti.aggiungiAlCarrello(car1, antonio, crema, 1);
+	 gestoreprodotti.aggiungiAlCarrello(car2,giovanni, aspirabriciole, 2);
+	 gestoreprodotti.aggiungiAlCarrello(car2, giovanni, crema, 2);
 	 gestoreprodotti.aggiungiAlCarrello(car3, antonio, detersivo, 10);
-	 gestoreprodotti.aggiungiAlCarrello(car5, antonio, uova, 6);
-	 gestoreprodotti.aggiungiAlCarrello(car4, nunzia, uova, 6);
-	 gestoreprodotti.aggiungiAlCarrello(car6, nunzia, farina, 1);
+	 gestoreprodotti.aggiungiAlCarrello(car5, antonio, smalto, 6);
+	 gestoreprodotti.aggiungiAlCarrello(car4, giovanni, smalto, 6);
+	 gestoreprodotti.aggiungiAlCarrello(car6, giovanni, crema, 1);
 	 
 	 Sconto sconto1 = new Sconto(777, 50, data_Sconto1);
 	 Sconto sconto2 = new Sconto(666, 50, data_Sconto2);
 
 	 spesa_antonio = new Spesa(1, gestoreprodotti.procediAlPAgamento(antonio, car1), data1, StatoSpesa.ORDINATA, antonio.getCarrello());
 	 spesa_antonio2 = new Spesa(2, gestoreprodotti.procediAlPAgamento(antonio, car3), data3, StatoSpesa.ORDINATA, antonio.getCarrello());
-	 spesa_nunzia = new Spesa(3, gestoreprodotti.procediAlPAgamento(nunzia, car2), data2, StatoSpesa.ORDINATA, nunzia.getCarrello());
+	 spesa_giovanni = new Spesa(3, gestoreprodotti.procediAlPAgamento(giovanni, car2), data2, StatoSpesa.ORDINATA, giovanni.getCarrello());
 	 spesa_antonio3 = new Spesa(4, gestoreprodotti.procediAlPAgamento(antonio, car5), data4, StatoSpesa.ORDINATA, antonio.getCarrello());
-	 spesa_nunzia2 = new Spesa(5, gestoreprodotti.procediAlPAgamento(nunzia, car4), data_nunzia, StatoSpesa.ORDINATA, nunzia.getCarrello());
-	 spesa_nunzia3 = new Spesa(6, gestoreprodotti.procediAlPAgamento(nunzia, car6), data_nunzia2, StatoSpesa.ORDINATA, nunzia.getCarrello());
+	 spesa_giovanni2 = new Spesa(5, gestoreprodotti.procediAlPAgamento(giovanni, car4), data5, StatoSpesa.ORDINATA, giovanni.getCarrello());
+	 spesa_giovanni3 = new Spesa(6, gestoreprodotti.procediAlPAgamento(giovanni, car6), data6, StatoSpesa.ORDINATA, giovanni.getCarrello());
 	 
 	 gestoreprodotti.aggiungiSpesa(spesa_antonio);
 	 gestoreprodotti.aggiungiSpesa(spesa_antonio3);
 	 gestoreprodotti.aggiungiSpesa(spesa_antonio2);
-	 gestoreprodotti.aggiungiSpesa(spesa_nunzia);
-	 gestoreprodotti.aggiungiSpesa(spesa_nunzia2);
-	 gestoreprodotti.aggiungiSpesa(spesa_nunzia3);
+	 gestoreprodotti.aggiungiSpesa(spesa_giovanni);
+	 gestoreprodotti.aggiungiSpesa(spesa_giovanni2);
+	 gestoreprodotti.aggiungiSpesa(spesa_giovanni3);
 
 	 
 	System.out.println("Lista clienti:\n"+gestoreprodotti.getListaClienti()); 
@@ -101,9 +101,9 @@ public class main {
 	 gestoreprodotti.aggiungiSconto(sconto2);
 
       spesa_antonio3.setCosto_totale((gestoreprodotti.applicaSconto(sconto1, spesa_antonio3, antonio)));
-      spesa_nunzia2.setCosto_totale(gestoreprodotti.applicaSconto(sconto2, spesa_nunzia2, nunzia));
+      spesa_giovanni2.setCosto_totale(gestoreprodotti.applicaSconto(sconto2, spesa_giovanni2, giovanni));
       
-    System.out.println(gestoreprodotti.generaReport(2));
+    System.out.println(gestoreprodotti.generaReport(3));
 	
     
    
