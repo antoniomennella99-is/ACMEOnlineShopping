@@ -281,7 +281,7 @@ public class GestioneProdotti {
 	
 	public String generaReport(int k) {
 		String s = new String("");
-																	//LinkedHashSet per una versione oridinata
+																//LinkedHashSet per una versione oridinata
 		ArrayList<Cliente> listaclienti2 = new ArrayList<Cliente>(new HashSet<Cliente>(listaclientipagato));
 		for (Cliente cliente :listaclienti2 ) {
 			if(conteggioSpese(cliente) >= k) {
