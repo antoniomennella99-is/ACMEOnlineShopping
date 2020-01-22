@@ -33,13 +33,7 @@ public class Main {
 	
 	Cliente antonio = new Cliente (car1, "Antonio", "Mennella", "1234466", "2414 5664 5433");
 	Cliente giovanni = new Cliente (car2, "Giovanni", "Battista", "45674322", "152255 5494 48");
-	
-	/*car1.setCliente(antonio);
-	car2.setCliente(nunzia);
-	car3.setCliente(antonio);
-	car5.setCliente(antonio);
-	car4.setCliente(nunzia);
-	car6.setCliente(nunzia);*/
+
 	
 	Prodotto crema = new Prodotto(123,"Crema Viso", "Idratante", 3);
 	Prodotto aspirabriciole = new Prodotto(321, "Aspirabriciole", "Elettrico", 30);
@@ -104,7 +98,7 @@ public class Main {
       spesa_giovanni2.setCosto_totale(gestoreprodotti.applicaSconto(sconto2, spesa_giovanni2, giovanni));
       
     System.out.println(gestoreprodotti.generaReport(3));
-	
+	 
     
    
 	}
